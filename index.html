@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounting Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body class="m-3">
+    <form action="list.php" method="GET" id="form">
+
+        <div class="mb-3">
+            <label for="username" class="form-label">Filter user</label>
+            <input type="text" class="form-control" id="username" name="user" placeholder="admin-cat">
+        </div>
+
+        <div class="mb-3">
+            <label for="client" class="form-label">Filter client</label>
+            <input type="text" class="form-control" id="client" name="client" placeholder="00-11-22-AA-BB-CC">
+        </div>
+
+        <div class="mb-3">
+            <label for="reporter" class="form-label">Filter reporter</label>
+            <input type="text" class="form-control" id="reporter" name="reporter" placeholder="192.168.1.1">
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="true" id="use1024" name="use1024">
+            <label class="form-check-label" for="use1024">
+                Use 1024 as KB
+            </label>
+        </div>
+
+        <hr />
+
+        <a class="btn btn-secondary btn-sm" data-bs-toggle="collapse" href="#sensitiveopt" role="button"
+            aria-expanded="false" aria-controls="sensitiveopt">
+            Advanced options
+        </a>
+        <div class="collapse" id="sensitiveopt">
+            <br />
+            <div class="card card-body">
+
+                <div class="mb-3">
+                    <label for="after" class="form-label">Filter after</label>
+                    <input type="number" class="form-control" id="after" name="after" placeholder="1625065200">
+                </div>
+
+                <div class="mb-3">
+                    <label for="before" class="form-label">Filter before</label>
+                    <input type="number" class="form-control" id="before" name="before" placeholder="1627743600">
+                </div>
+
+                <hr />
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="true" id="hidesensitive" name="hidesensitive"
+                        checked>
+                    <label class=" form-check-label" for="hidesensitive">
+                        Hide sensitive contents
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="true" id="hideuser" name="hideuser">
+                    <label class="form-check-label" for="hideuser">
+                        Hide username
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <br />
+        <button type="submit" class="btn btn-primary">Search registerd data</button>
+        <button type="submit" class="btn btn-info"
+            onclick="document.getElementById('form').setAttribute('action', 'user.php')">Search per user
+            data</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
